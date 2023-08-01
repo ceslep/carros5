@@ -1,3 +1,7 @@
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+    jugador.sayText("Hayyyyyy", 500, true)
+})
+let jugador: Sprite = null
 let carro1 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . 3 3 3 3 3 3 3 3 . . 
@@ -36,6 +40,27 @@ let carro2 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Enemy)
 carro2.setPosition(0, 58)
+jugador = sprites.create(img`
+    . . . . . . . e e e e e . . . . 
+    . . . . . e e 2 2 2 2 2 e . . . 
+    . . . . e e 2 2 2 2 2 2 2 e . . 
+    . . . . e 9 4 2 2 2 2 2 4 b e . 
+    . . e e 9 9 4 4 2 2 2 2 4 9 b e 
+    . e 2 2 9 9 4 4 4 2 2 2 4 9 9 e 
+    e 2 2 2 9 9 2 4 4 4 4 4 2 9 9 e 
+    e 2 2 2 9 9 e e e e e e e 9 9 e 
+    e 2 2 2 9 b e b b b e b e b 9 e 
+    e 2 e e e e b b b b e b b e b e 
+    e e 3 3 e e 2 2 2 2 e 2 2 e e e 
+    e 3 3 e e e e e e e e e e e e e 
+    e e e e e e e e e e e e e e e e 
+    e e e e f f f e e e e f f f e e 
+    . e e f b c c f e e f b c c f . 
+    . . . . b b f . . . . b b f . . 
+    `, SpriteKind.Player)
+jugador.setPosition(151, 35)
+controller.moveSprite(jugador, 0, 100)
+jugador.setStayInScreen(true)
 forever(function () {
     scene.setBackgroundImage(img`
         9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
