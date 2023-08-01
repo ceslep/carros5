@@ -1,6 +1,27 @@
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    projectile = sprites.createProjectileFromSprite(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . 2 2 2 2 . . . . . . . . . 
+        . . 2 1 1 1 1 2 2 . . . . . . . 
+        . . 1 1 1 1 1 1 3 3 2 2 . . . . 
+        . . 1 1 1 1 1 1 1 1 3 3 3 3 . . 
+        . . 1 1 1 1 1 1 1 1 1 1 1 1 . . 
+        . . 1 1 1 1 1 1 1 3 2 2 3 3 . . 
+        . . 2 1 1 1 1 3 2 2 . . . . . . 
+        . . . 2 2 2 2 . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, jugador, -50, 0)
+})
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
     jugador.sayText("Hayyyyyy", 500, true)
 })
+let projectile: Sprite = null
 let jugador: Sprite = null
 let carro1 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
